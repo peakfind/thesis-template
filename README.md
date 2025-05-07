@@ -1,2 +1,2 @@
 # thesis-template
-A LaTeX template for thesis. 
+A LaTeX template for theses. 
