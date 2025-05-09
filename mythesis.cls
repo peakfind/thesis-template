@@ -72,3 +72,20 @@
 % ---------------------------------------------------------
 % More declarations
 % ---------------------------------------------------------
+
+% Define cover page elements
+\newcommand{\thesistype}[1]{\def\@thesistype{#1}}
+\newcommand{\thesistitle}[1]{\def\@thesistitle{#1}}
+\newcommand{\thesisauthor}[1]{\def\@thesisauthor{#1}}
+
+% Cover page
+\renewcommand{\maketitle}{
+    \thispagestyle{empty}
+    \begin{center}
+        {\fontsize{22pt}{33pt}\selectfont\bfseries\@thesistype} \\
+        \vspace{2cm}
+        {\fontsize{16pt}{24pt}\selectfont\bfseries\@thesistitle} \\
+        \vspace{2cm}
+        {\fontsize{12pt}{18pt}\selectfont\@thesisauthor}
+    \end{center}
+}
