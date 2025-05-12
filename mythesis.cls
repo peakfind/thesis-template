@@ -10,7 +10,7 @@
 % ---------------------------------------------------------
 
 % Load base class
-\LoadClass[a4paper]{book}
+\LoadClass[a4paper,oneside]{book}
 
 % Page layout
 \RequirePackage{geometry}
@@ -77,6 +77,7 @@
 \newcommand{\thesistype}[1]{\def\@thesistype{#1}}
 \newcommand{\thesistitle}[1]{\def\@thesistitle{#1}}
 \newcommand{\thesisauthor}[1]{\def\@thesisauthor{#1}}
+\newcommand{\thesisinstitute}[1]{\def\@thesisinstitute{#1}}
 
 % Cover page
 \renewcommand{\maketitle}{
@@ -86,6 +87,19 @@
         \vspace{2cm}
         {\fontsize{16pt}{24pt}\selectfont\bfseries\@thesistitle} \\
         \vspace{2cm}
-        {\fontsize{12pt}{18pt}\selectfont\@thesisauthor}
+        {\fontsize{12pt}{18pt}\selectfont\@thesisauthor} \\
+        \vspace{2cm}
+        {\fontsize{12pt}{18pt}\selectfont\@thesisinstitute}
     \end{center}
+}
+
+\newcommand{\abstractname}{\heiti 摘要}
+\newenvironment{abstract}[1][\abstractname]{
+    \vspace*{2cm}
+    \begin{center}
+        #1
+    \end{center}
+
+}{
+    \vspace{1.5cm}
 }
