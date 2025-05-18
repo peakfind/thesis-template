@@ -33,21 +33,43 @@
 \RequirePackage{hyperref}
 
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue!70!black,
-    citecolor=black,
+    colorlinks=true,  
+    linkcolor=magenta,
+    citecolor=blue!70!black,
     anchorcolor=black,
     urlcolor=teal!70!black,
 }
+
+% For math 
+% the order of these three packages is very important
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+% \RequirePackage{unicode-math}
 
 % Fonts
 \RequirePackage{fontspec}
 \RequirePackage{xeCJK}
 
+% Set English font
+\setmainfont{XCharter}[
+    Path       = /usr/local/texlive/2024/texmf-dist/fonts/opentype/public/xcharter/,
+    Extension  = .otf,
+    UprightFont= *-Roman,
+    BoldFont   = *-Bold,
+    ItalicFont = *-Italic,
+    SlantedFont = *-Slanted,
+    BoldItalicFont = *-BoldItalic,
+    BoldSlantedFont = *-BoldSlanted,
+]
+
 % Set chinese fonts
 \setCJKmainfont{Source Han Serif SC}[
     BoldFont = *-Bold,
     ItalicFont = *-ExtraLight,
+]
+
+\setCJKmonofont{Source Han Mono SC}[
+    Scale = MatchLowercase,
 ]
 
 % Define font families for styling
