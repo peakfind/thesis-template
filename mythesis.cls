@@ -50,6 +50,11 @@
 \RequirePackage{fontspec}
 \RequirePackage{xeCJK}
 
+\xeCJKsetup{
+    CJKspace = true, % add space between Chinese and English
+    CJKecglue = \hspace{0.2em},
+}
+
 % Set English font
 \setmainfont{XCharter}[
     Path       = /usr/local/texlive/2024/texmf-dist/fonts/opentype/public/xcharter/,
@@ -94,6 +99,9 @@
 % ---------------------------------------------------------
 % More declarations
 % ---------------------------------------------------------
+
+% Space between paragraphs
+\setlength{\parskip}{0.3em plus 0.1em minus 0.1em}
 
 % Define cover page elements
 \newcommand{\thesistype}[1]{\def\@thesistype{#1}}
