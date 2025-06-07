@@ -41,10 +41,64 @@
 }
 
 % For math 
-% the order of these three packages is very important
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
-% \RequirePackage{unicode-math}
+
+% For theorem environments
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+
+% Define styles for the theorem environments
+\declaretheoremstyle[spaceabove=6pt,
+                     spacebelow=6pt,
+                     headfont=\normalfont\bfseries,
+                     notefont=\bfseries,
+                     notebraces={(}{)},
+                     bodyfont=\itshape,
+                     postheadspace=0.5em,
+                     numberwithin=section]{thmsty}
+
+\declaretheoremstyle[spaceabove=6pt,
+                     spacebelow=6pt,
+                     headfont=\normalfont\bfseries,
+                     notefont=\bfseries,
+                     notebraces={(}{)},
+                     bodyfont=\itshape,
+                     postheadspace=0.5em,
+                     numberwithin=section]{lemsty}
+                     
+\declaretheoremstyle[spaceabove=6pt,
+                     spacebelow=6pt,
+                     headfont=\normalfont\bfseries,
+                     notefont=\bfseries,
+                     notebraces={(}{)},
+                     bodyfont=\itshape,
+                     postheadspace=0.5em,
+                     numberwithin=section]{propsty}
+
+\declaretheoremstyle[spaceabove=6pt,
+                     spacebelow=6pt,
+                     headfont=\normalfont\bfseries,
+                     bodyfont=\normalfont,
+                     postheadspace=0.5em,
+                     numbered=no,
+                     qed=\qedsymbol]{prfsty}
+
+\declaretheoremstyle[spaceabove=6pt,
+                     spacebelow=6pt,
+                     headfont=\normalfont\bfseries,
+                     notefont=\bfseries,
+                     notebraces={(}{)},
+                     bodyfont=\normalfont,
+                     postheadspace=0.5em,
+                     numberwithin=section]{defsty}
+                     
+% Declare theorem environments
+\declaretheorem[shaded={bgcolor=magenta!20!white},style=thmsty]{theorem}
+\declaretheorem[shaded={bgcolor=gray!20!white},style=lemsty,numberlike=theorem]{lemma}
+\declaretheorem[shaded={bgcolor=blue!20!white},style=defsty,numberlike=theorem]{definition}
+\declaretheorem[shaded={bgcolor=orange!20!white},style=propsty,numberlike=theorem]{proposition}
+\declaretheorem[style=prfsty,numberlike=theorem]{Proof}
 
 % Fonts
 \RequirePackage{fontspec}
@@ -67,7 +121,7 @@
     BoldSlantedFont = *-BoldSlanted,
 ]
 
-% Set chinese fonts
+% Set Chinese fonts
 \setCJKmainfont{Source Han Serif SC}[
     BoldFont = *-Bold,
     ItalicFont = *-ExtraLight,
