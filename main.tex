@@ -1,13 +1,15 @@
 % Test document
 
 \documentclass{mythesis}
-\usepackage{amsmath}
+
 \usepackage{lipsum}
 
 \thesistype{中文学位论文模版}
 \thesistitle{二维空间中麦克斯韦方程辐射条件及数值模拟}
 \thesisauthor{张嘉译}
 \thesisinstitute{数学科学学院}
+
+\loadsymbols{symbols}
 
 \begin{document}
 
@@ -58,6 +60,28 @@ Different font shapes
     \item \texttt{XCharter}
 \end{itemize}
 
+\section{Theorem environments}
+
+\begin{theorem}[thm test]
+   \lipsum[2] 
+\end{theorem}
+
+\begin{definition}[def test]
+   \lipsum[2] 
+\end{definition}
+
+\begin{lemma}[lem test]
+    \lipsum[2]
+\end{lemma}
+
+\begin{proposition}[prop test]
+   \lipsum[2] 
+\end{proposition}
+
+\begin{Proof}
+   \lipsum[2] 
+\end{Proof}
+
 \chapter{中文文档简介}
 
 在本章中我们会介绍本模版的中文支持。
@@ -74,6 +98,19 @@ Different font shapes
 我们同样定义了{\heiti 思源黑体} 查看后面的内容是否受到黑体命令的影响。
 
 我们使用了xcolor宏包。并在hyperref的设置中为不同的链接设定了不同的颜色。其效果如下:
-在\autoref{chp:intro}中, 我们主要展示了本模版的英文排版效果。 我的Github仓库为\url{https://github.com/peakfind}。
+在\autoref{chp:intro}中, 我们主要展示了本模版的英文排版效果。我的Github仓库为\url{https://github.com/peakfind}。
 
+这是English中文混排Example。这是英文Chinese混排例子.
+
+\chapter{Other functions}
+
+\section{Symbol list}
+
+The position \gls{x} and velocity \gls{v}. We also introduce the quasi momentum \gls{alpha}.
+
+The position $x$ and velocity $v$. We also introduce the quasi momentum $\alpha$.
+
+% Print the symbols
+% \printlistofsymbols
+\printnoidxglossaries
 \end{document}

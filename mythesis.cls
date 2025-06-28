@@ -94,14 +94,16 @@
                      numberwithin=section]{defsty}
                      
 % Declare theorem environments
-\declaretheorem[shaded={bgcolor=magenta!20!white},style=thmsty]{theorem}
+\declaretheorem[shaded={bgcolor=magenta!10!white},style=thmsty]{theorem}
 \declaretheorem[shaded={bgcolor=gray!20!white},style=lemsty,numberlike=theorem]{lemma}
-\declaretheorem[shaded={bgcolor=blue!20!white},style=defsty,numberlike=theorem]{definition}
-\declaretheorem[shaded={bgcolor=orange!20!white},style=propsty,numberlike=theorem]{proposition}
+\declaretheorem[shaded={bgcolor=blue!10!white},style=defsty,numberlike=theorem]{definition}
+\declaretheorem[shaded={bgcolor=orange!10!white},style=propsty,numberlike=theorem]{proposition}
 \declaretheorem[style=prfsty,numberlike=theorem]{Proof}
 
 % Fonts
 \RequirePackage{fontspec}
+
+% For Chinese fonts
 \RequirePackage{xeCJK}
 
 \xeCJKsetup{
@@ -137,6 +139,27 @@
 \newcommand{\songti}{\CJKfamily{zhserif}}
 \newcommand{\heiti}{\CJKfamily{zhsans}}
 
+% Glossary support
+\RequirePackage[acronym, symbols]{glossaries}
+
+% Glossary Configuration
+%\newglossary[slg]{symbols}{syi}{syg}{List of Symbols}
+\makenoidxglossaries
+
+% Command to load the symbol source file
+\newcommand{\loadsymbols}[1]{
+    \IfFileExists{#1}{
+        \input{#1}
+    }{
+        \ClassWarning{mythesis}{Symbols file '#1' not found!}
+    }
+}
+
+% Command to print the Glossary
+\newcommand{\printlistofsymbols}{
+    \printglossary[type=symbols, title={List of Symbols}, nonumberlist]
+}
+
 % Header and footers
 \RequirePackage{fancyhdr}
 
@@ -157,11 +180,17 @@
 % Space between paragraphs
 \setlength{\parskip}{0.3em plus 0.1em minus 0.1em}
 
-% Define cover page elements
+%% Define cover page elements
+%  the cover page elements for thesis 
 \newcommand{\thesistype}[1]{\def\@thesistype{#1}}
 \newcommand{\thesistitle}[1]{\def\@thesistitle{#1}}
 \newcommand{\thesisauthor}[1]{\def\@thesisauthor{#1}}
 \newcommand{\thesisinstitute}[1]{\def\@thesisinstitute{#1}}
+
+%  the cover page elements for notes
+\newcommand{\notetitle}[1]{\def\@notetitle{#1}}
+\newcommand{\noteauthor}[1]{\def\@noteauthor{#1}}
+\newcommand{\noteother}[1]{\def\@noteother{#1}} % other information about notes
 
 % Cover page
 \renewcommand{\maketitle}{
