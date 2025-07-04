@@ -140,11 +140,12 @@
 \newcommand{\heiti}{\CJKfamily{zhsans}}
 
 % Glossary support
-\RequirePackage[acronym, symbols]{glossaries}
+\RequirePackage[xindy,symbols,style=indexgroup]{glossaries}
 
 % Glossary Configuration
-%\newglossary[slg]{symbols}{syi}{syg}{List of Symbols}
-\makenoidxglossaries
+% \makenoidxglossaries % command for noidx
+\makeglossaries % 
+
 
 % Command to load the symbol source file
 \newcommand{\loadsymbols}[1]{
@@ -157,7 +158,7 @@
 
 % Command to print the Glossary
 \newcommand{\printlistofsymbols}{
-    \printglossary[type=symbols, title={List of Symbols}, nonumberlist]
+    \printglossary[type=symbols, title={List of Symbols}]
 }
 
 % Header and footers
